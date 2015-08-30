@@ -11,12 +11,9 @@
 
 	<!-- Le styles -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>
-	<style>
-	body {
-		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-	}
-	</style>
+
 	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
+	<?php echo $this->Html->css('styles'); ?>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -38,11 +35,58 @@ echo $this->fetch('css');
 </head>
 
 <body>
-	<div class="header">
-		<h1>割引シール口コミサイト ディスカン</h1>
-	</div>
+	<nav class="navbar navbar-static">
+	    <div class="container">
+	      <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="glyphicon glyphicon-chevron-down"></span>
+	      </a>
+	      <div class="nav-collapse collase">
+	        <ul class="nav navbar-nav">
+	          <li><a href="index">Home</a></li>
+	          <li><a href="#">About</a></li>
+	          <li><a href="#">Contact</a></li>
+	        </ul>
+	        <ul class="nav navbar-right navbar-nav">
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+	            <ul class="dropdown-menu" style="padding:12px;">
+	                <form class="form-inline">
+	                   <div class="input-group">
+	                     <input type="text" class="form-control" placeholder="Search">
+	                     <div class="input-group-btn">
+	     			       <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+	                     </div>
+	                  </div>
+	                </form>
+	              </ul>
+	          </li>
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="#">Login</a></li>
+	              <li><a href="#">Profile</a></li>
+	              <li class="divider"></li>
+	              <li><a href="#">About</a></li>
+	             </ul>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav><!-- /.navbar -->
 
-	<div class="container">
+	<header class="masthead">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col col-sm-6">
+	        <h1><a href="index" title="割引シール口コミサイト ディスカン">ディスカン</a>
+	          <p class="lead">割引シール情報共有サービス</p></h1>
+	      </div>
+	    </div>
+	  </div>
+	</header>
+
+
+
 		<div class="table-responsive">
 		<?php echo $this->Session->flash(); ?>
 
@@ -53,9 +97,10 @@ echo $this->fetch('css');
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 	<?php echo $this->Html->script('bootstrap.min'); ?>
 	<?php echo $this->fetch('script'); ?>
+	<?php echo $this->fetch('scripts'); ?>
 
 </body>
 </html>
