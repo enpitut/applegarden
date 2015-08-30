@@ -85,8 +85,6 @@ echo $this->fetch('css');
 	  </div>
 	</header>
 
-
-
 		<div class="table-responsive">
 		<?php echo $this->Session->flash(); ?>
 

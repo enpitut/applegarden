@@ -52,8 +52,8 @@
   </div>
 
   <div class="form-group">
-    <label for="name">投稿者名</label>
-    <input type="text" class="form-control" name="name" placeholder="お名前">
+    <label for="user">投稿者名</label>
+    <input type="text" class="form-control" name="user" placeholder="お名前">
   </div>
 
 

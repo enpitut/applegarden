@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="applegarden0827.css" rel="stylesheet" type="text/css">
+  <link href="goods.css" rel="stylesheet" type="text/css">
   <?php $this->Html->css('applegarden0827.css', NULL, array('inline' => false)); ?>
 </head>
 <body>
@@ -20,7 +20,7 @@
       ?>
       <tr>
         <td><?php echo $data[$i]["Applegarden"]["name"] ?></td>
-        <td><a href="applegarden0827_kasu?store=<?php echo $linknow ?>"><?php echo $data[$i]["Applegarden"]["store"] ?></a></td>
+        <td><a href="info_detail?store=<?php echo $linknow ?>"><?php echo $data[$i]["Applegarden"]["store"] ?></a></td>
         <td><?php echo $data[$i]["Applegarden"]["date"] ?></td>
         <td><?php echo $data[$i]["Applegarden"]["rate"] ?>%</td>
         <td><?php echo $data[$i]["Applegarden"]["user"] ?></td>
@@ -29,11 +29,6 @@
 
     </table>
 
-    <div id="test">
-      test
-    </div>
-    <br>
-
-    <a href="applegarden0827_1">店舗ごとに見る</a>
+    <a href="stores">店舗ごとに見る</a>
   </body>
   </html>

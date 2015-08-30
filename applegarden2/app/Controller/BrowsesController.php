@@ -13,7 +13,12 @@ class BrowsesController extends AppController
   public function index()
   {
   }
-  public function applegarden0827()
+
+  public function about()
+  {
+  }
+
+  public function goods()
   {
     $this->Applegarden->setSource('goods');
     $this->set('data', $this->Applegarden->find('all'));
@@ -21,7 +26,7 @@ class BrowsesController extends AppController
     $this->set('data2', $this->Applegarden->find('all',array('fields' => array('id','store'))));
   }
 
-  public function applegarden0827_kasu()
+  public function info_detail()
   {
     $this->Applegarden->setSource('stores');
     $this->set('data',$this->Applegarden->find('all',array(
@@ -39,13 +44,13 @@ class BrowsesController extends AppController
     'conditions' => array('store =' => $data[0]["Applegarden"]["store"]))));
   }
 
-  public function applegarden0827_1()
+  public function stores()
   {
     $this->Applegarden->setSource('stores');
     $this->set('data',$this->Applegarden->find('all'));
   }
 
-  public function applegarden_submit()
+  public function submit()
   {
     $this->Applegarden->setSource('goods');
     if (isset($this->request->data['submit_info'])){
@@ -56,7 +61,7 @@ class BrowsesController extends AppController
         'store' => $this->request->data['store'],
         'rate' => $this->request->data['rate'],
         'date' => $today,
-        'user' => "ほげた　やすお"
+        'user' => $this->request->data['user']
       ));
       $this->Applegarden->save();
       ini_set( 'display_errors', 1 );
