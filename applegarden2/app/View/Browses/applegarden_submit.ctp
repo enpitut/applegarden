@@ -53,7 +53,7 @@
 
   <div class="form-group">
     <label for="name">投稿者名</label>
-    武藤　寛　さん
+    <input type="text" class="form-control" name="name" placeholder="お名前">
   </div>
 
 

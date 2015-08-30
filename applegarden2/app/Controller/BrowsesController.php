@@ -5,7 +5,8 @@ class BrowsesController extends AppController
 {
   public $uses = array('Applegarden');
   public $helpers = array('Form', 'Html');
-  public $layout = false;
+  // public $layout = false;
+  public $layout = ('default');
   public function beforeFilter()
   {
   }
@@ -55,7 +56,7 @@ class BrowsesController extends AppController
         'store' => $this->request->data['store'],
         'rate' => $this->request->data['rate'],
         'date' => $today,
-        'user' => "武藤　寛"
+        'user' => "ほげた　やすお"
       ));
       $this->Applegarden->save();
       ini_set( 'display_errors', 1 );

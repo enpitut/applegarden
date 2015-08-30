@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>割引シール情報口コミサイト ディスカン</title>
   <link href="applegarden0827.css" rel="stylesheet" type="text/css">
+  <?php $this->Html->css('applegarden0827.css', NULL, array('inline' => false)); ?>
 </head>
 <body>
 
-  <h1>現在の割引商品</h1>
+  <h2>現在の割引商品</h2>
 
-  <table border=3; table-layout:fixed;>
+
+    <table class="table table-striped">
     <tr><th>商品名</th><th>店舗名</th><th>割引開始時間</th><th>割引率</th><th>投稿者</th></tr>
     <?php for($i=0; $i<count($data); $i++){ ?>
       <?php for($j=0; $j<count($data2); $j++){
@@ -28,6 +28,11 @@
       <?php } ?>
 
     </table>
+
+    <div id="test">
+      test
+    </div>
+    <br>
 
     <a href="applegarden0827_1">店舗ごとに見る</a>
   </body>
