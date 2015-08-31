@@ -11,7 +11,7 @@
 
 	<!-- Le styles -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>
-
+	<?php echo $this->Html->css('scripts'); ?>
 	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
 	<?php echo $this->Html->css('styles'); ?>
 
@@ -80,6 +80,9 @@ echo $this->fetch('css');
 	      <div class="col col-sm-6">
 	        <h1><a href="index" title="割引シール口コミサイト ディスカン">ディスカン</a>
 	          <p class="lead">割引シール情報共有サービス</p></h1>
+						<button type="button" class="btn btn-default">
+			        <a href="submit">商割引シール情報を書き込む！</a>
+			      </button>
 	      </div>
 	    </div>
 	  </div>

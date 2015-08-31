@@ -10,6 +10,7 @@ class BrowsesController extends AppController
   public function beforeFilter()
   {
   }
+
   public function index()
   {
   }
