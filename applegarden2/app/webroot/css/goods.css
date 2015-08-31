@@ -1,0 +1,17 @@
+table{
+	border:#ff9966;
+	table-layout: fixed;
+	width: 80%;
+	font-size:20px;
+	height:30px;
+	}
+tr{
+	align="center";
+
+	}
+
+td{
+	text-align:center;
+	}
+
+a:link {color: #000000;}

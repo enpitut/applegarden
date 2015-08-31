@@ -1,63 +1,104 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-	<?php echo $this->Html->charset(); ?>
+	<meta charset="utf-8">
 	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
+		割引シール口コミサイト ディスカン
 	</title>
-	<?php
-		echo $this->Html->meta('icon');
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-		echo $this->Html->css('cake.generic');
+	<!-- Le styles -->
+	<?php echo $this->Html->css('bootstrap.min'); ?>
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
+	<?php echo $this->Html->css('styles'); ?>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<!--
+	<link rel="shortcut icon" href="/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+-->
+<?php
+echo $this->fetch('meta');
+echo $this->fetch('css');
+?>
 </head>
+
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+	<nav class="navbar navbar-static">
+	    <div class="container">
+	      <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="glyphicon glyphicon-chevron-down"></span>
+	      </a>
+	      <div class="nav-collapse collase">
+	        <ul class="nav navbar-nav">
+	          <li><a href="index">Home</a></li>
+	          <li><a href="#">About</a></li>
+	          <li><a href="#">Contact</a></li>
+	        </ul>
+	        <ul class="nav navbar-right navbar-nav">
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+	            <ul class="dropdown-menu" style="padding:12px;">
+	                <form class="form-inline">
+	                   <div class="input-group">
+	                     <input type="text" class="form-control" placeholder="Search">
+	                     <div class="input-group-btn">
+	     			       <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+	                     </div>
+	                  </div>
+	                </form>
+	              </ul>
+	          </li>
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="#">Login</a></li>
+	              <li><a href="#">Profile</a></li>
+	              <li class="divider"></li>
+	              <li><a href="#">About</a></li>
+	             </ul>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav><!-- /.navbar -->
 
-			<?php echo $this->Session->flash(); ?>
+	<header class="masthead">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col col-sm-6">
+	        <h1><a href="index" title="割引シール口コミサイト ディスカン">ディスカン</a>
+	          <p class="lead">割引シール情報共有サービス</p></h1>
+	      </div>
+	    </div>
+	  </div>
+	</header>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<!--<?php echo $this->element('sql_dump'); ?>-->
+		<div class="table-responsive">
+		<?php echo $this->Session->flash(); ?>
+
+		<?php echo $this->fetch('content'); ?>
+
+	</div> <!-- /container -->
+
+	<!-- Le javascript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<?php echo $this->Html->script('bootstrap.min'); ?>
+	<?php echo $this->fetch('script'); ?>
+	<?php echo $this->fetch('scripts'); ?>
+
 </body>
 </html>
