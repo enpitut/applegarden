@@ -1,0 +1,61 @@
+<?php
+
+
+
+	//session_start();
+
+	
+
+	ini_set( 'display_errors', 1 );
+
+
+
+	$con = mysql_connect('127.0.0.1', 'root', 'test');
+
+
+
+	$result = mysql_select_db('pbl', $con);
+
+
+
+	$result = mysql_query('SET NAMES utf8', $con);
+
+
+
+	$result = mysql_query('SELECT * FROM shop', $con);
+
+
+
+
+
+	for($i=0;true;$i++)
+
+	{
+
+		$data = mysql_fetch_array($result);
+
+		if(!$data)
+
+		{
+
+			break;
+
+		}
+
+		//echo '<p>' . $data['shopName'] . ':' . $data['shopAddress'] . ':'. "</p>\n";
+
+		$_SESSION["shopName".$i] = $data['shopName'];
+
+		$_SESSION["shopAddress".$i] = $data['shopAddress'];
+
+	}
+
+
+
+	
+
+
+
+
+
+?>
